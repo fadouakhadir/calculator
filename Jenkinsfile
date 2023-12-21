@@ -6,5 +6,10 @@ stages {
 			git url: "https://github.com/fadouakhadir/calculator.git", branch:"main"
 		}
 	}
+	stage("Compilation") {
+		steps {
+			sh "./gradlew compileJava"
+		}
+	}
 }
 }
