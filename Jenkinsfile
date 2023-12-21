@@ -39,5 +39,12 @@ pipeline {
             }
         }
     }
+	post {
+		always {
+			mail to: 'majidlearning7@gmail.com',
+			subject: "Cher lion Votre compilation est terminée: ${currentBuild.fullDisplayName}",
+			body: " Votre build est accompli, Veuilez vérifier: ${env.BUILD_URL}"
+		}
+	}
 }
 
